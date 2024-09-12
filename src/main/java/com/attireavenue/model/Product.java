@@ -18,6 +18,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 
+
 @Entity
 public class Product {
 	
@@ -45,19 +46,31 @@ public class Product {
 	private int quantity;
 	
 	@Column(name="brand")
-	private int brand;
+	private String brand;
 	
 	@Column(name="color")
-	private int color;
+	private String color;
 	
+	 @Embedded
+	 @ElementCollection
+	 @Column(name="sizes")
+	private Set<com.attireavenue.model.Size> sizes = new HashSet<>();
 	
-	@Embedded
-	@ElementCollection
-	@Column(name="sizes")
-	private Set<Size> sizes = new HashSet<>();
-	
+
+
+	public Set<com.attireavenue.model.Size> getSizes() {
+		return sizes;
+	}
+
+
+
+
+	public void setSizes(Set<com.attireavenue.model.Size> sizes) {
+		this.sizes = sizes;
+	}
+
 	@Column(name="image_url")
-	private int ImageUrl;
+	private String ImageUrl;
 	
 	@OneToMany(mappedBy="product",cascade = CascadeType.ALL,orphanRemoval=true)
 	private List<Rating> ratings = new ArrayList<>();
@@ -81,8 +94,11 @@ public class Product {
 		
 	}
 
+
+	
+
 	public Product(Long id, String title, String description, int price, int discountedPrice, int discountPercent,
-			int quantity, int brand, int color, Set<Size> sizes, int imageUrl, List<Rating> ratings,
+			int quantity, String brand, String color, Set<Size> sizes, String imageUrl, List<Rating> ratings,
 			List<Review> reviews, int numRatings, Category category, LocalDateTime createdAt) {
 		super();
 		this.id = id;
@@ -159,35 +175,30 @@ public class Product {
 		this.quantity = quantity;
 	}
 
-	public int getBrand() {
+	public String getBrand() {
 		return brand;
 	}
 
-	public void setBrand(int brand) {
+	public void setBrand(String brand) {
 		this.brand = brand;
 	}
 
-	public int getColor() {
+	public String getColor() {
 		return color;
 	}
 
-	public void setColor(int color) {
+	public void setColor(String color) {
 		this.color = color;
 	}
 
-	public Set<Size> getSizes() {
-		return sizes;
-	}
 
-	public void setSizes(Set<Size> sizes) {
-		this.sizes = sizes;
-	}
+	
 
-	public int getImageUrl() {
+	public String getImageUrl() {
 		return ImageUrl;
 	}
 
-	public void setImageUrl(int imageUrl) {
+	public void setImageUrl(String imageUrl) {
 		ImageUrl = imageUrl;
 	}
 
@@ -230,6 +241,13 @@ public class Product {
 	public void setCreatedAt(LocalDateTime createdAt) {
 		this.createdAt = createdAt;
 	}
+
+
+
+
+
+
+	}
 	
 
-}
+
