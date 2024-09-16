@@ -1,8 +1,0 @@
-
-
-package com.attireavenue.config;
-
-public class JwtConstant {
-    public static final String JWT_HEADER = "Authorization";
-    public static final String SECRET_KEY = "jajasjsjsjsuihdwqubhxdcvsuhbfvdsuybfuysabduaybxuyhabayuhbxauybxsauybasxuyasxbuyas"; // Replace with a secure secret key
-}
