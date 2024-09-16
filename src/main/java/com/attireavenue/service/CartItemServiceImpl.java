@@ -2,6 +2,8 @@ package com.attireavenue.service;
 
 import java.util.Optional;
 
+import org.springframework.stereotype.Service;
+
 import com.attireavenue.exception.CartItemException;
 import com.attireavenue.exception.UserException;
 import com.attireavenue.model.Cart;
@@ -11,6 +13,7 @@ import com.attireavenue.model.User;
 import com.attireavenue.repository.CartItemRepository;
 import com.attireavenue.repository.CartRepository;
 
+@Service
 public class CartItemServiceImpl implements CartItemService {
 
 	
