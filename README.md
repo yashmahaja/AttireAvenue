@@ -78,7 +78,7 @@ All protected endpoints require the `Authorization` header with a valid token.
     }
     ```
 
-... [continue documenting other endpoints](https://e-commerce-server-production-0873.up.railway.app/swagger-ui/index.html)
+
 
 ## Components
 
@@ -108,11 +108,9 @@ All protected endpoints require the `Authorization` header with a valid token.
 
 ## Contact
 
-For any queries or issues, please contact **Ashok Zarmariya** at `ashokzarmariya@gmail.com`.
+For any queries or issues, please contact **Yash Mahajan** at `yashmahajan0521@gmail.com`.
 
-## License
 
-This API is licensed under **Ashok Zarmariya**.
 
 
 
