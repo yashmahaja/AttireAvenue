@@ -144,4 +144,22 @@ public class ProductServiceImpl implements ProductService{
 		return filteredProducts;
 	}
 
+	@Override
+	public List<Product> getAllProducts() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Product> searchProduct(String query) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Product> recentlyAddedProduct() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

@@ -87,11 +87,11 @@ public class OrderItem {
 		this.price = price;
 	}
 
-	public Integer getDiscountedprice() {
+	public Integer getDiscountedPrice() {
 		return discountedprice;
 	}
 
-	public void setDiscountedprice(Integer discountedprice) {
+	public void setDiscountedPrice(Integer discountedprice) {
 		this.discountedprice = discountedprice;
 	}
 

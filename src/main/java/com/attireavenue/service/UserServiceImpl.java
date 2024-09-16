@@ -1,5 +1,6 @@
 package com.attireavenue.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
@@ -40,6 +41,12 @@ public class UserServiceImpl implements UserService {
 		if(user == null) {
 			throw new UserException("user not found with email");
 		}
+		return null;
+	}
+
+	@Override
+	public List<User> findAllUsers() {
+		// TODO Auto-generated method stub
 		return null;
 	}
 

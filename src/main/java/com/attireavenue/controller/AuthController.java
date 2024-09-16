@@ -15,10 +15,12 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 import com.attireavenue.config.JwtProvider;
 import com.attireavenue.exception.UserException;
+import com.attireavenue.model.Cart;
 import com.attireavenue.model.User;
 import com.attireavenue.repository.UserRepository;
 import com.attireavenue.requests.LoginRequest;
 import com.attireavenue.response.AuthResponse;
+import com.attireavenue.service.CartService;
 import com.attireavenue.service.CustomUserServiceImpl;
 
 @RestController
@@ -29,9 +31,11 @@ public class AuthController {
 	private JwtProvider jwtProvider;
 	private PasswordEncoder passwordEncoder;
 	private CustomUserServiceImpl customUserService;
+	private CartService cartService;
 	
 	
-	public AuthController(UserRepository userRepository, CustomUserServiceImpl customUserService,PasswordEncoder passwordEncoder,JwtProvider jwtProvider) {
+	public AuthController(UserRepository userRepository, CustomUserServiceImpl customUserService,CartService cartService,
+			PasswordEncoder passwordEncoder,JwtProvider jwtProvider) {
 		this.userRepository = userRepository;
 		this.customUserService = customUserService;
 		this.passwordEncoder = passwordEncoder;
@@ -63,6 +67,7 @@ public class AuthController {
 		createdUser.setLastName(lastName);
 		
 		User savedUser = userRepository.save(createdUser);
+		Cart cart = cartService.createCart(savedUser);
 		
 		
 		Authentication authentication = new UsernamePasswordAuthenticationToken(savedUser.getEmail(),savedUser.getPassword());

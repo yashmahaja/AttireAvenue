@@ -4,6 +4,8 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.attireavenue.domain.OrderStatus;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
@@ -47,7 +49,7 @@ public class Order {
 	
 	private Integer discount;
 	
-	private String orderStatus;
+	private OrderStatus orderStatus;
 	private int totalItem;
 	
 	private LocalDateTime createdAt;
@@ -140,11 +142,11 @@ public class Order {
 		this.discount = discount;
 	}
 
-	public String getOrderStatus() {
+	public OrderStatus getOrderStatus() {
 		return orderStatus;
 	}
 
-	public void setOrderStatus(String orderStatus) {
+	public void setOrderStatus(OrderStatus orderStatus) {
 		this.orderStatus = orderStatus;
 	}
 
@@ -166,7 +168,7 @@ public class Order {
 
 	public Order(Long id, String orderId, User user, List<OrderItem> orderItems, LocalDateTime orderDate,
 			LocalDateTime deliveryDate, Address shippingAddress, PaymentDetails paymentDetails, double totalPrice,
-			Integer totalDiscountedPrice, Integer discount, String orderStatus, int totalItem,
+			Integer totalDiscountedPrice, Integer discount, OrderStatus orderStatus, int totalItem,
 			LocalDateTime createdAt) {
 		super();
 		this.id = id;

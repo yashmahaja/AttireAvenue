@@ -1,10 +1,13 @@
 package com.attireavenue.model;
 
+import com.attireavenue.domain.PaymentMethod;
+import com.attireavenue.domain.PaymentStatus;
+
 public class PaymentDetails {
 	
-	private String paymentMethod;
+	private PaymentMethod paymentMethod;
 	
-	private String status;
+	private PaymentStatus status;
 	
 	private String paymentId;
 	
@@ -14,32 +17,15 @@ public class PaymentDetails {
 	
 	private String razorpayPaymentLinkStatus;
 	
-	private String razorpayPaymentId;
+	private String razorpayPaymentId​;;
 
-	public String getPaymentMethod() {
-		return paymentMethod;
+
+
+	
+	public PaymentDetails() {
+		// TODO Auto-generated constructor stub
 	}
-
-	public void setPaymentMethod(String paymentMethod) {
-		this.paymentMethod = paymentMethod;
-	}
-
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	public String getPaymentId() {
-		return paymentId;
-	}
-
-	public void setPaymentId(String paymentId) {
-		this.paymentId = paymentId;
-	}
-
+	
 	public String getRazorpayPaymentLinkId() {
 		return razorpayPaymentLinkId;
 	}
@@ -64,30 +50,34 @@ public class PaymentDetails {
 		this.razorpayPaymentLinkStatus = razorpayPaymentLinkStatus;
 	}
 
-	public String getRazorpayPaymentId() {
-		return razorpayPaymentId;
+	public String getRazorpayPaymentId​() {
+		return razorpayPaymentId​;
 	}
 
-	public void setRazorpayPaymentId(String razorpayPaymentId) {
-		this.razorpayPaymentId = razorpayPaymentId;
+	public void setRazorpayPaymentId​(String razorpayPaymentId​) {
+		this.razorpayPaymentId​ = razorpayPaymentId​;
 	}
 
-	public PaymentDetails(String paymentMethod, String status, String paymentId, String razorpayPaymentLinkId,
-			String razorpayPaymentLinkReferenceId, String razorpayPaymentLinkStatus, String razorpayPaymentId) {
-		super();
+	public PaymentMethod getPaymentMethod() {
+		return paymentMethod;
+	}
+	public void setPaymentMethod(PaymentMethod paymentMethod) {
 		this.paymentMethod = paymentMethod;
-		this.status = status;
+	}
+	public String getPaymentId() {
+		return paymentId;
+	}
+	public void setPaymentId(String paymentId) {
 		this.paymentId = paymentId;
-		this.razorpayPaymentLinkId = razorpayPaymentLinkId;
-		this.razorpayPaymentLinkReferenceId = razorpayPaymentLinkReferenceId;
-		this.razorpayPaymentLinkStatus = razorpayPaymentLinkStatus;
-		this.razorpayPaymentId = razorpayPaymentId;
 	}
-
-	public PaymentDetails() {
-		super();
-		
+	public PaymentStatus getStatus() {
+		return status;
 	}
+	public void setStatus(PaymentStatus status) {
+		this.status = status;
+	}
+	
+	
 
 	
 	

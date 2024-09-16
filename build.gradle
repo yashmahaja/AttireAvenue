@@ -52,6 +52,10 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	implementation 'com.razorpay:razorpay-java:1.4.3'
+	implementation 'io.swagger.core.v3:swagger-annotations:2.1.6'
+	
+
 }
 
 tasks.named('test') {

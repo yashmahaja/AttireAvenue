@@ -28,6 +28,10 @@ public class CartItem {
 	private int quantity;
 	
 	private Integer price;
+	private Integer discountedPrice;
+	
+	private Long userId;
+	
 
 	public Long getId() {
 		return id;
@@ -79,6 +83,22 @@ public class CartItem {
 
 	public CartItem() {
 		// TODO Auto-generated constructor stub
+	}
+
+	public Integer getDiscountedPrice() {
+		return discountedPrice;
+	}
+
+	public void setDiscountedPrice(Integer discountedPrice) {
+		discountedPrice = discountedPrice;
+	}
+
+	public Long getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Long userId) {
+		this.userId = userId;
 	}
 	
 	
